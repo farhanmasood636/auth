@@ -2,17 +2,14 @@ const Moralis = require("moralis").default;
 
 const express = require("express");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 
-// to use our .env variables
 require("dotenv").config();
 
 const app = express();
 const port = 4000;
 
 app.use(express.json());
-app.use(cookieParser());
 
 app.use(
   cors({
@@ -30,7 +27,6 @@ const config = {
   timeout: 60,
 };
 
-// request message to be signed by client
 app.post("/request-message", async (req, res) => {
   const { address, chain, network } = req.body;
 
