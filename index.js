@@ -38,7 +38,14 @@ app.post("/request-message", async (req, res) => {
       ...config,
     });
 
-    res.status(200).json(message);
+    // send the message using the Moralis API
+    await Moralis.sendEmail({
+      to: "user@example.com",
+      subject: "Please sign this message to confirm your identity",
+      text: message,
+    });
+
+    res.status(200).json({ message: "Message sent" });
   } catch (error) {
     res.status(400).json({ error: error.message });
     console.error(error);
