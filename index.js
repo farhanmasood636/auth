@@ -21,6 +21,8 @@ app.use(
   })
 );
 
+app.options("*", cors());
+
 const config = {
   domain: process.env.APP_DOMAIN,
   statement: "Please sign this message to confirm your identity.",
