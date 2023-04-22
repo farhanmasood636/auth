@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://merry-taiyaki-c79d24.netlify.app",
     credentials: true,
   })
 );
