@@ -14,10 +14,9 @@ const port = 4000;
 app.use(express.json());
 app.use(cookieParser());
 
-// allow access to React app domain
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
